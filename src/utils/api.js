@@ -13,3 +13,14 @@ export const getTopMarketCapCoins = async () => {
         //TODO handle error
     }
 };
+
+export const getCoinFromSearch = async (id) => {
+    console.log(id);
+    const url = `${BASE_ENDPOINT}&ids=${id}`;
+    try {
+        const response = await axios.get(url);
+        console.log(response.data[0]);
+    } catch (error) {
+        console.log(error);
+    }
+};
