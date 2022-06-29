@@ -1,0 +1,16 @@
+.searchBarContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.searchBar {
+    display: flex;
+
+    font-size: 1.2rem;
+    text-align: start;
+}
+
+.submitButton {
+}

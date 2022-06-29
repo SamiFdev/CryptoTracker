@@ -1,0 +1,30 @@
+.favorites {
+    height: 30vh;
+    width: 15vw;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-top: 1rem;
+    background-color: slategray;
+    display: grid;
+    text-align: center;
+    margin: 0.5rem;
+    grid-template-rows: auto;
+}
+
+.favorites div {
+    padding: 8px;
+    font-size: 1rem;
+    display: block;
+    color: aliceblue;
+}
+
+.mainContent {
+    margin-left: 150px;
+    font-size: 18px;
+}
+
+.favorites span {
+    font-size: 1.5rem;
+    color: aliceblue;
+}
