@@ -7,7 +7,6 @@ export const getTopMarketCapCoins = async () => {
     const url = `${BASE_ENDPOINT}&order=market_cap_desc&per_page=100&page=1`;
     try {
         const response = await axios.get(url);
-        console.log("api", response);
         return response.data;
     } catch (error) {
         console.log(error);
