@@ -1,30 +1,24 @@
-.favorites {
+.sidePanel {
     height: 30vh;
     width: 15vw;
     position: relative;
     left: 0;
     top: 0;
     padding-top: 1rem;
-    background-color: slategray;
+    background-color: var(--primary-accent);
     display: grid;
     text-align: center;
     margin: 0.5rem;
     grid-template-rows: auto;
 }
 
-.favorites div {
+.sidePanel h2 {
+    font-size: 1.5rem;
+    color: var(--primary-textColor);
+}
+.sidePanel div {
     padding: 8px;
     font-size: 1rem;
     display: block;
-    color: aliceblue;
-}
-
-.mainContent {
-    margin-left: 150px;
-    font-size: 18px;
-}
-
-.favorites span {
-    font-size: 1.5rem;
-    color: aliceblue;
+    color: var(--primary-textColor);
 }

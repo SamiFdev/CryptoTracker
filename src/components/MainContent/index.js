@@ -17,7 +17,7 @@ function MainContent() {
                 value={searchedCoin}
                 onChange={(e) => setsearhedCoin(e.target.value)}
                 placeholder="Search a coin"
-            ></input>
+            />
             <button onClick={handleSubmit} className={styles.submitButton}>
                 Submit
             </button>
