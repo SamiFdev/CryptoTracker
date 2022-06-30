@@ -9,7 +9,6 @@ function App() {
         <main>
             <Header />
             <MainContent />
-
             <SidePanel />
         </main>
     );
