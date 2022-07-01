@@ -9,8 +9,8 @@ export const getTopMarketCapCoins = async () => {
         const response = await axios.get(url);
         return response.data;
     } catch (error) {
-        console.log(error);
-        //TODO handle error
+        console.log("catch", error);
+        throw error;
     }
 };
 
