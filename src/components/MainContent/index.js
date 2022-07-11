@@ -1,12 +1,26 @@
 import styles from "./mainContent.module.css";
-import { useState } from "react";
-import { getCoinFromSearch } from "../../utils/api";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSingleCoin } from "../../features/singleCoinSlice";
+
 function MainContent() {
     const [searchedCoin, setsearhedCoin] = useState("");
+    const [wasDataFetched, setWasDataFetched] = useState(false);
+    const dispatch = useDispatch();
+    const { loading, data, error } = useSelector(
+        (state) => state.aSearchedCoin
+    );
+    useEffect(() => {
+        if (!wasDataFetched) {
+            setWasDataFetched(true);
+            dispatch(fetchSingleCoin());
+        }
+    }, [dispatch, wasDataFetched]);
 
     const handleSubmit = () => {
         //TODO - add loading state and loader
-        getCoinFromSearch(searchedCoin);
+        fetchSingleCoin(searchedCoin);
+        // console.log(searchedCoin);
     };
 
     return (

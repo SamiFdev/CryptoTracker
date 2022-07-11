@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 
 const BASE_ENDPOINT =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd";
@@ -14,13 +14,13 @@ const BASE_ENDPOINT =
 //     }
 // };
 
-export const getCoinFromSearch = async (id) => {
-    console.log(id);
-    const url = `${BASE_ENDPOINT}&ids=${id}`;
-    try {
-        const response = await axios.get(url);
-        console.log(response.data[0]);
-    } catch (error) {
-        console.log(error);
-    }
-};
+// export const getCoinFromSearch = async (id) => {
+//     console.log(id);
+//     const url = `${BASE_ENDPOINT}&ids=${id}`;
+//     try {
+//         const response = await axios.get(url);
+//         console.log(response.data[0]);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
