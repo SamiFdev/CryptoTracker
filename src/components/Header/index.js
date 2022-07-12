@@ -21,10 +21,7 @@ function Header() {
         <section>
             <h1 className={styles.siteTitle}>Crypto Tracker</h1>
             {loading ? <Loader /> : null}
-            {/* {error ? <Error /> : null} */}
-            {/* <button onClick={() => dispatch(fetchCoinsByMarketCap())}>
-                get coins{" "}
-            </button> */}
+            {error ? <Error /> : null}
         </section>
     );
 }

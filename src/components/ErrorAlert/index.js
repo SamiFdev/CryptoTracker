@@ -1,7 +1,7 @@
 import React from "react";
 
 function Error() {
-    return <div>Error retrieving top market cap coins!</div>;
+    return <div>Error retrieving coin data!!</div>;
 }
 
 export default Error;

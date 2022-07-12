@@ -6,7 +6,6 @@ export const fetchSingleCoin = createAsyncThunk(
         const data = await fetch(
             `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id}`
         ).then((res) => res.json());
-        //coming back as undefined
         console.log("test", id);
         return data;
     }
