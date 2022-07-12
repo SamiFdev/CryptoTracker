@@ -21,21 +21,19 @@ function MainContent() {
     };
 
     return (
-        <section>
+        <section className={styles.mainContainer}>
             {loading ? <Loader /> : null}
             {error ? <Error /> : null}
-            <div className={styles.searchBarContainer}>
-                <input
-                    className={styles.searchBar}
-                    type="text"
-                    value={searchedCoin}
-                    onChange={handleInputChange}
-                    placeholder="Search a coin"
-                />
-                <button onClick={handleSubmit} className={styles.submitButton}>
-                    Submit
-                </button>
-            </div>
+            <input
+                className={styles.searchBar}
+                type="text"
+                value={searchedCoin}
+                onChange={handleInputChange}
+                placeholder="Search a coin"
+            />
+            <button onClick={handleSubmit} className={styles.submitButton}>
+                Submit
+            </button>
         </section>
     );
 }
