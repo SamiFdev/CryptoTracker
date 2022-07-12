@@ -6,11 +6,15 @@ import Loader from "../Loader";
 import Error from "../ErrorAlert";
 
 function MainContent() {
-    const [searchedCoin, setSearhedCoin] = useState("");
+    const [searchedCoin, setSearchedCoin] = useState("");
     const dispatch = useDispatch();
     const { loading, data, error } = useSelector(
         (state) => state.aSearchedCoin
     );
+
+    const handleInputChange = (e) => {
+        setSearchedCoin(e.target.value);
+    };
 
     const handleSubmit = () => {
         dispatch(fetchSingleCoin(searchedCoin));
@@ -25,7 +29,7 @@ function MainContent() {
                     className={styles.searchBar}
                     type="text"
                     value={searchedCoin}
-                    onChange={(e) => setSearhedCoin(e.target.value)}
+                    onChange={handleInputChange}
                     placeholder="Search a coin"
                 />
                 <button onClick={handleSubmit} className={styles.submitButton}>
