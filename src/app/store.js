@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import coinSlice from "../features/coinSlice";
+import singleCoinSlice from "../features/singleCoinSlice";
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+    reducer: {
+        coins: coinSlice,
+        aSearchedCoin: singleCoinSlice,
+    },
 });
