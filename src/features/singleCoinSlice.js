@@ -11,7 +11,7 @@ export const fetchSingleCoin = createAsyncThunk(
 );
 
 const initialState = {
-    data: null,
+    data: [],
     error: false,
     loading: false,
 };
