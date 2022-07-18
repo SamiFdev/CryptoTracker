@@ -26,7 +26,7 @@ export const singleCoinSlice = createSlice({
         },
         [fetchSingleCoin.fulfilled]: (state, action) => {
             state.loading = false;
-            state.data = action.payload;
+            state.data = action.payload[0];
         },
         [fetchSingleCoin.rejected]: (state) => {
             state.error = true;

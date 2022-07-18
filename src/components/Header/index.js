@@ -18,17 +18,20 @@ function Header() {
     }, [dispatch, wasDataFetched]);
 
     return (
-        <main>
+        <header>
             <h1 className={styles.siteTitle}>Crypto Tracker</h1>
             {loading ? <Loader /> : null}
             {error ? <Error /> : null}
             {/* {data.map((coins, index) => (
-                <div key={index}>
-                    {coins.id}
-                    {coins.current_price}
+                <div className={styles.coinsContainer} key={index}>
+                    <div className={styles.scrollingInfo}>
+                        {coins.id}
+                        <img src={coins.image} alt="coin"></img>$
+                        {coins.current_price}
+                    </div>
                 </div>
             ))} */}
-        </main>
+        </header>
     );
 }
 
