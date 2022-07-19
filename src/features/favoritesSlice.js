@@ -9,6 +9,7 @@ export const favoritesSlice = createSlice({
     initialState,
     reducers: {
         updateFavorites: (state, action) => {
+            localStorage.setItem("favoriteCoinIds", action.payload);
             state.data = action.payload;
         },
     },

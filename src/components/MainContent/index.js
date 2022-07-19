@@ -26,7 +26,6 @@ function MainContent() {
         // on click look up local storage item
         // add new coin id to local storage item
         const newFavorites = [...favorites, data.id];
-        localStorage.setItem("favoriteCoinIds", newFavorites);
         dispatch(updateFavorites(newFavorites));
     };
 
