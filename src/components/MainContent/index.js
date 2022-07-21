@@ -2,9 +2,12 @@ import styles from "./mainContent.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
-import { updateFavorites } from "../../features/favoritesSlice";
+import { importSavedFavorites } from "../../features/favoritesSlice";
+// import { updateFavorites } from "../../features/favoritesSlice";
+import { addNewFavorite } from "../../features/favoritesSlice";
 import Loader from "../Loader";
 import Error from "../ErrorAlert";
+import Favorites from "../Favorites";
 
 function MainContent() {
     const [searchedCoin, setSearchedCoin] = useState([]);
@@ -23,10 +26,10 @@ function MainContent() {
     };
 
     const onFavoriteClick = () => {
-        // on click look up local storage item
-        // add new coin id to local storage item
-        const newFavorites = [...favorites, data.id];
-        dispatch(updateFavorites(newFavorites));
+        // dispatch addNewFavorite with argument of coin id saved in state in this component - powering the value of the input
+        dispatch(addNewFavorite(searchedCoin));
+        dispatch(importSavedFavorites());
+        // window.alert("added to favorites!");
     };
 
     // TODO
@@ -52,13 +55,18 @@ function MainContent() {
                 Submit
             </button>
             <div className={styles.singleCoinDiv}>
-                {/* Use redux favorites slice to indicate if there was no data returned after fetch */}
+                {/* Use redux favorites slice to indicate if there was no data
+                returned after fetch */}
                 {!data?.id ? (
-                    <div>display an error message here - coin is misspelt</div>
+                    <div>Search for a valid coin</div>
                 ) : (
                     <>
                         {data.id}
                         {data.current_price}
+
+                        {/* check if data.id exists in favorites */}
+                        {/* if exists -> display remove from favorites */}
+                        {/* if doesnt exist -> display add to favorites */}
                         <button
                             onClick={onFavoriteClick}
                             className={styles.favoriteButton}
