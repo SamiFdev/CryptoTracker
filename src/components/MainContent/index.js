@@ -5,9 +5,11 @@ import { fetchSingleCoin } from "../../features/singleCoinSlice";
 import { importSavedFavorites } from "../../features/favoritesSlice";
 // import { updateFavorites } from "../../features/favoritesSlice";
 import { addNewFavorite } from "../../features/favoritesSlice";
+import { removeExistingFavorite } from "../../features/favoritesSlice";
 import Loader from "../Loader";
 import Error from "../ErrorAlert";
 import Favorites from "../Favorites";
+import { AiOutlineStar } from "react-icons/ai";
 
 function MainContent() {
     const [searchedCoin, setSearchedCoin] = useState([]);
@@ -28,7 +30,10 @@ function MainContent() {
     const onFavoriteClick = () => {
         // dispatch addNewFavorite with argument of coin id saved in state in this component - powering the value of the input
         dispatch(addNewFavorite(searchedCoin));
-        dispatch(importSavedFavorites());
+    };
+
+    const onRemoveClick = () => {
+        dispatch(removeExistingFavorite(searchedCoin));
     };
 
     // TODO
@@ -62,17 +67,21 @@ function MainContent() {
                     <>
                         {data.id}
                         {data.current_price}
-
+                        {favorites.includes(data.id) ? (
+                            <button onClick={onRemoveClick}>
+                                <AiOutlineStar className={styles.filledStar} />
+                            </button>
+                        ) : (
+                            <button
+                                onClick={onFavoriteClick}
+                                className={styles.favoriteButton}
+                            >
+                                <AiOutlineStar />
+                            </button>
+                        )}
                         {/* check if data.id exists in favorites */}
                         {/* if exists -> display remove from favorites */}
                         {/* if doesnt exist -> display add to favorites */}
-
-                        <button
-                            onClick={onFavoriteClick}
-                            className={styles.favoriteButton}
-                        >
-                            Add favorite
-                        </button>
                     </>
                 )}
             </div>

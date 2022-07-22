@@ -9,23 +9,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineStar } from "react-icons/ai";
 
 function Favorites() {
-    const { data } = useSelector((state) => state.favorites);
+    const { data, fetched } = useSelector((state) => state.favorites);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (!data?.length) {
+        console.log(data);
+        if (!data?.length && !fetched) {
             dispatch(importSavedFavorites());
         }
-    }, [dispatch, data]);
+    }, [dispatch, data, fetched]);
 
     const clearFavorites = () => {
         dispatch(removeAllExistingFavorites());
-        dispatch(importSavedFavorites());
     };
 
     const removeFavorite = () => {
         dispatch(removeExistingFavorite());
-        dispatch(importSavedFavorites());
     };
 
     if (data?.length) {
