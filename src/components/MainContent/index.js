@@ -29,7 +29,6 @@ function MainContent() {
         // dispatch addNewFavorite with argument of coin id saved in state in this component - powering the value of the input
         dispatch(addNewFavorite(searchedCoin));
         dispatch(importSavedFavorites());
-        // window.alert("added to favorites!");
     };
 
     // TODO
@@ -67,6 +66,7 @@ function MainContent() {
                         {/* check if data.id exists in favorites */}
                         {/* if exists -> display remove from favorites */}
                         {/* if doesnt exist -> display add to favorites */}
+
                         <button
                             onClick={onFavoriteClick}
                             className={styles.favoriteButton}

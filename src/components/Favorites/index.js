@@ -11,26 +11,24 @@ import { AiOutlineStar } from "react-icons/ai";
 function Favorites() {
     const { data } = useSelector((state) => state.favorites);
     const dispatch = useDispatch();
+
     useEffect(() => {
         if (!data?.length) {
             dispatch(importSavedFavorites());
         }
     }, [dispatch, data]);
+
     const clearFavorites = () => {
         dispatch(removeAllExistingFavorites());
         dispatch(importSavedFavorites());
     };
+
     const removeFavorite = () => {
         dispatch(removeExistingFavorite());
         dispatch(importSavedFavorites());
     };
 
-    // if favorites, render them out
     if (data?.length) {
-        // return the favorites
-        // }
-        // if not, leave empty
-        console.log("favorites", data);
         return (
             <section className={styles.sidePanel}>
                 <h2>Favorites</h2>

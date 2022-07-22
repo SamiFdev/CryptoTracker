@@ -8,10 +8,6 @@ export const favoritesSlice = createSlice({
     name: "favorites",
     initialState,
     reducers: {
-        // updateFavorites: (state, action) => {
-        //     localStorage.setItem("favoriteCoinIds", action.payload);
-        //     state.data = action.payload;
-        // },
         addNewFavorite: (state, action) => {
             // expected payload: new coin id
             // make a copy of state, spread in the new coin
