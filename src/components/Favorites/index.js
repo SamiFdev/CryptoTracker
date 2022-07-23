@@ -24,6 +24,7 @@ function Favorites() {
     };
     const clearFavorites = () => {
         dispatch(removeAllExistingFavorites());
+        dispatch(importSavedFavorites());
     };
     const coinFetchFromFavs = (coin) => {
         dispatch(fetchSingleCoin(coin));
@@ -40,11 +41,7 @@ function Favorites() {
                             <button onClick={() => removeFavorite(coin)}>
                                 <AiOutlineStar className={styles.favStar} />
                             </button>
-                            <button
-                                onClick={() =>
-                                    dispatch(coinFetchFromFavs(coin))
-                                }
-                            >
+                            <button onClick={() => coinFetchFromFavs(coin)}>
                                 View
                             </button>
                         </li>
