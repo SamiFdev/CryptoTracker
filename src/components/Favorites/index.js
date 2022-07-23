@@ -13,18 +13,16 @@ function Favorites() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(data);
         if (!data?.length && !fetched) {
             dispatch(importSavedFavorites());
         }
     }, [dispatch, data, fetched]);
 
-    const clearFavorites = () => {
-        dispatch(removeAllExistingFavorites());
-    };
-
     const removeFavorite = () => {
         dispatch(removeExistingFavorite());
+    };
+    const clearFavorites = () => {
+        dispatch(removeAllExistingFavorites());
     };
 
     if (data?.length) {
@@ -36,7 +34,7 @@ function Favorites() {
                         <li key={index}>
                             {coin}
                             <button onClick={removeFavorite}>
-                                <AiOutlineStar />
+                                <AiOutlineStar className={styles.favStar} />
                             </button>
                         </li>
                     ))}
