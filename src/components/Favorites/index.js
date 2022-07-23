@@ -7,6 +7,7 @@ import {
 import styles from "./favorites.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineStar } from "react-icons/ai";
+import { fetchSingleCoin } from "../../features/singleCoinSlice";
 
 function Favorites() {
     const { data, fetched } = useSelector((state) => state.favorites);
@@ -18,11 +19,14 @@ function Favorites() {
         }
     }, [dispatch, data, fetched]);
 
-    const removeFavorite = () => {
-        dispatch(removeExistingFavorite());
+    const removeFavorite = (coin) => {
+        dispatch(removeExistingFavorite(coin));
     };
     const clearFavorites = () => {
         dispatch(removeAllExistingFavorites());
+    };
+    const coinFetchFromFavs = (coin) => {
+        dispatch(fetchSingleCoin(coin));
     };
 
     if (data?.length) {
@@ -33,8 +37,15 @@ function Favorites() {
                     {data.map((coin, index) => (
                         <li key={index}>
                             {coin}
-                            <button onClick={removeFavorite}>
+                            <button onClick={() => removeFavorite(coin)}>
                                 <AiOutlineStar className={styles.favStar} />
+                            </button>
+                            <button
+                                onClick={() =>
+                                    dispatch(coinFetchFromFavs(coin))
+                                }
+                            >
+                                View
                             </button>
                         </li>
                     ))}

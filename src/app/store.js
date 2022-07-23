@@ -10,5 +10,3 @@ export const store = configureStore({
         favorites: favoritesSlice,
     },
 });
-
-// favorites.data -> favorites.coins
