@@ -21,7 +21,6 @@ export const favoritesSlice = createSlice({
             const newFavoritesArray = [...state.data];
             const indexToRemove = newFavoritesArray.indexOf(action.payload);
             newFavoritesArray.splice(indexToRemove, 1);
-            console.log(newFavoritesArray);
             state.data = newFavoritesArray;
             localStorage.setItem("favoriteCoinIds", newFavoritesArray);
         },

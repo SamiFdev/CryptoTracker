@@ -34,6 +34,7 @@ function Favorites() {
         return (
             <section className={styles.sidePanel}>
                 <h2>Favorites</h2>
+                <span>Click the star to remove from favorites</span>
                 <ul>
                     {data.map((coin, index) => (
                         <li key={index}>
@@ -54,6 +55,7 @@ function Favorites() {
         return (
             <section className={styles.sidePanel}>
                 <h2>Favorites</h2>
+                <span>Click the star to remove from favorites</span>
             </section>
         );
     }
