@@ -22,3 +22,7 @@
     display: block;
     color: var(--primary-textColor);
 }
+
+.favStar {
+    fill: gold;
+}

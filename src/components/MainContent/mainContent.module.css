@@ -12,5 +12,13 @@
     text-align: start;
 }
 
+.singleCoinDiv {
+    display: flex;
+}
+
 .submitButton {
+}
+
+.filledStar {
+    fill: gold;
 }

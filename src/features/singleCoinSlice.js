@@ -11,7 +11,7 @@ export const fetchSingleCoin = createAsyncThunk(
 );
 
 const initialState = {
-    data: null,
+    data: [],
     error: false,
     loading: false,
 };
@@ -26,7 +26,7 @@ export const singleCoinSlice = createSlice({
         },
         [fetchSingleCoin.fulfilled]: (state, action) => {
             state.loading = false;
-            state.data = action.payload;
+            state.data = action.payload[0];
         },
         [fetchSingleCoin.rejected]: (state) => {
             state.error = true;

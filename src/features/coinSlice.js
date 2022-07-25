@@ -11,7 +11,7 @@ export const fetchCoinsByMarketCap = createAsyncThunk(
 );
 
 const initialState = {
-    data: null,
+    data: [],
     error: false,
     loading: false,
 };

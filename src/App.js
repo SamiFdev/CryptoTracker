@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "./components/Header";
-import SidePanel from "./components/SidePanel";
 import MainContent from "./components/MainContent";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 import "./App.css";
+import Favorites from "./components/Favorites";
 
 function App() {
     return (
@@ -12,7 +12,7 @@ function App() {
             <main>
                 <Header />
                 <MainContent />
-                <SidePanel />
+                <Favorites />
             </main>
         </Provider>
     );
