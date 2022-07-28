@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    background-color: rgb(53, 146, 146);
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.copyRight {
+    margin: auto;
+    display: flex;
+}

@@ -1,6 +1,7 @@
 :root {
     --primary-accent: slategray;
     --primary-textColor: whitesmoke;
+    background-color: black;
 }
 
 body {

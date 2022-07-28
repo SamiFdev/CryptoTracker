@@ -7,18 +7,300 @@
 
 .searchBar {
     display: flex;
-
     font-size: 1.2rem;
     text-align: start;
+    height: 1.5rem;
+}
+
+.searchField {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .singleCoinDiv {
-    display: flex;
 }
 
 .submitButton {
+    height: 2rem;
+    border-radius: 5px;
 }
 
 .filledStar {
     fill: gold;
+}
+.favoriteButton {
+    background-color: slategray;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.directions {
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.coinCardDisplay {
+    display: flex;
+    height: 50vh;
+    width: 15vw;
+    flex-direction: column;
+    background-color: rgb(53, 146, 146);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    border: 2px black solid;
+    border-radius: 10px;
+}
+
+.coinCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 6rem;
+    padding-right: 1.5rem;
+}
+
+.coinNameForCard {
+    font-size: 3rem;
+    color: black;
+    text-align: center;
+}
+
+.coinPicForCard {
+    color: black;
+    height: 10rem;
+    width: 10rem;
+    text-align: center;
+}
+
+.coinPriceForCard {
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+}
+@media (max-width: 1300px) {
+    .coinCardDisplay {
+        display: flex;
+        height: 50vh;
+        width: 22vw;
+        flex-direction: column;
+        background-color: rgb(53, 146, 146);
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        border: 2px black solid;
+        border-radius: 10px;
+    }
+    .searchBar {
+        display: flex;
+        font-size: 1.2rem;
+        text-align: start;
+        height: 1.5rem;
+    }
+
+    .searchField {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding-left: 1rem;
+    }
+
+    .submitButton {
+        height: 2rem;
+        border-radius: 5px;
+    }
+    @media (max-width: 1000px) {
+        .coinCardDisplay {
+            display: flex;
+            height: 50vh;
+            width: 25vw;
+            flex-direction: column;
+            background-color: rgb(53, 146, 146);
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            border: 2px black solid;
+            border-radius: 10px;
+        }
+        .coinCard {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            margin: 6rem;
+            padding-left: 8rem;
+        }
+
+        .searchBar {
+            display: flex;
+            font-size: 1.2rem;
+            text-align: start;
+            height: 1.5rem;
+        }
+
+        .searchField {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding-left: 8rem;
+            margin: 1rem;
+        }
+
+        .submitButton {
+            height: 2rem;
+            border-radius: 5px;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .coinCardDisplay {
+        display: flex;
+        height: 50vh;
+        width: 25vw;
+        flex-direction: column;
+        background-color: rgb(53, 146, 146);
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        border: 2px black solid;
+        border-radius: 10px;
+    }
+    .coinCard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin: 6rem;
+        padding-left: 13rem;
+    }
+
+    .searchBar {
+        display: flex;
+        font-size: 1.2rem;
+        text-align: start;
+        height: 1.5rem;
+    }
+
+    .searchField {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding-left: 15rem;
+        margin: 1rem;
+    }
+
+    .submitButton {
+        height: 2rem;
+        border-radius: 5px;
+    }
+}
+@media (max-width: 660px) {
+    .coinCardDisplay {
+        display: flex;
+        height: 50vh;
+        width: 35vw;
+        flex-direction: column;
+        background-color: rgb(53, 146, 146);
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        border: 2px black solid;
+        border-radius: 10px;
+    }
+    .coinCard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin: 6rem;
+        padding-left: 10rem;
+    }
+
+    .searchBar {
+        display: flex;
+        font-size: 1.2rem;
+        text-align: start;
+        height: 1.5rem;
+    }
+
+    .searchField {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding-left: 8rem;
+        margin: 1rem;
+    }
+
+    .submitButton {
+        height: 2rem;
+        border-radius: 5px;
+    }
+}
+@media (max-width: 470px) {
+    .coinCardDisplay {
+        display: flex;
+        height: 50vh;
+        width: 40vw;
+        flex-direction: column;
+        background-color: rgb(53, 146, 146);
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        border: 2px black solid;
+        border-radius: 10px;
+    }
+    .coinCard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin: 6rem;
+        padding-left: 6rem;
+    }
+
+    .searchBar {
+        display: flex;
+        font-size: 1.2rem;
+        text-align: start;
+        height: 1.5rem;
+    }
+
+    .searchField {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding-left: 8rem;
+        margin: 1rem;
+    }
+
+    .submitButton {
+        height: 2rem;
+        border-radius: 5px;
+    }
+}
+@media (max-width: 600px) {
+    .directions {
+        font-size: 13px;
+    }
+}
+@media (max-width: 565px) {
+    .directions {
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+@media (max-width: 560px) {
+    .directions {
+        color: black;
+    }
 }

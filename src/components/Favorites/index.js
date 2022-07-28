@@ -6,7 +6,7 @@ import {
 } from "../../features/favoritesSlice";
 import styles from "./favorites.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineSearch } from "react-icons/ai";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
 
 function Favorites() {
@@ -34,28 +34,43 @@ function Favorites() {
         return (
             <section className={styles.sidePanel}>
                 <h2>Favorites</h2>
-                <span>Click the star to remove from favorites</span>
-                <ul>
+                <span className={styles.helper}>
+                    Click the star to remove from favorites
+                </span>
+                <ul className={styles.favList}>
                     {data.map((coin, index) => (
-                        <li key={index}>
-                            {coin}
-                            <button onClick={() => removeFavorite(coin)}>
-                                <AiOutlineStar className={styles.favStar} />
-                            </button>
-                            <button onClick={() => coinFetchFromFavs(coin)}>
-                                View
-                            </button>
+                        <li className={styles.listedFavs} key={index}>
+                            <span className={styles.coinName}>{coin} </span>
+                            <div className={styles.favButtons}>
+                                <button
+                                    className={styles.removeFavoriteButton}
+                                    onClick={() => removeFavorite(coin)}
+                                >
+                                    <AiFillStar className={styles.favStar} />
+                                </button>
+                                <button
+                                    className={styles.viewCoinButton}
+                                    onClick={() => coinFetchFromFavs(coin)}
+                                >
+                                    <AiOutlineSearch />
+                                </button>
+                            </div>
                         </li>
                     ))}
                 </ul>
-                <button onClick={clearFavorites}>clear</button>
+                <button
+                    className={styles.clearFavsButton}
+                    onClick={clearFavorites}
+                >
+                    clear
+                </button>
             </section>
         );
     } else {
         return (
             <section className={styles.sidePanel}>
                 <h2>Favorites</h2>
-                <span>Click the star to remove from favorites</span>
+                <span>Your favorite coins will be saved here!</span>
             </section>
         );
     }
