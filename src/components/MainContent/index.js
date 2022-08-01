@@ -6,7 +6,9 @@ import { addNewFavorite } from "../../features/favoritesSlice";
 import { removeExistingFavorite } from "../../features/favoritesSlice";
 import Loader from "../Loader";
 import Error from "../ErrorAlert";
-import { AiFillStar } from "react-icons/ai";
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import { MdFavorite } from "react-icons/md";
+// import { savedSearch } from "../../features/singleCoinSlice";
 
 function MainContent() {
     const [searchedCoin, setSearchedCoin] = useState([]);
@@ -16,12 +18,16 @@ function MainContent() {
     );
     const { data: favorites } = useSelector((state) => state.favorites);
 
+    const savedSearch = data.id;
+
     const handleInputChange = (e) => {
         setSearchedCoin(e.target.value);
     };
+    console.log("test", savedSearch);
 
     const handleSubmit = () => {
         dispatch(fetchSingleCoin(searchedCoin));
+        setSearchedCoin("");
     };
 
     const onFavoriteClick = () => {
@@ -44,14 +50,14 @@ function MainContent() {
                     required
                     value={searchedCoin}
                     onChange={handleInputChange}
-                    placeholder="Search a coin"
+                    placeholder={savedSearch || "Search a coin!"}
                 />
                 <button
                     disabled={!searchedCoin.length || loading}
                     onClick={handleSubmit}
                     className={styles.submitButton}
                 >
-                    Submit
+                    Search
                 </button>
             </div>
             <div className={styles.singleCoinDiv}></div>
@@ -75,21 +81,34 @@ function MainContent() {
                             <span className={styles.coinPriceForCard}>
                                 $ {data.current_price}
                             </span>
+                            <span className={styles.lastTwentyFour}>
+                                Last 24 hours
+                            </span>
+                            <div className={styles.priceTrends}>
+                                <span className={styles.highTwentyFour}>
+                                    <AiOutlineArrowUp color="green" /> $
+                                    {data.high_24h}
+                                </span>
+                                <span className={styles.lowTwentyFour}>
+                                    <AiOutlineArrowDown color="red" /> $
+                                    {data.low_24h}
+                                </span>
+                            </div>
                         </div>
                         {favorites.includes(data.id) ? (
-                            <button
+                            <span
                                 onClick={onRemoveClick}
                                 className={styles.favoriteButton}
                             >
-                                <AiFillStar className={styles.filledStar} />
-                            </button>
+                                <MdFavorite className={styles.filledHeart} />
+                            </span>
                         ) : (
-                            <button
+                            <span
                                 onClick={onFavoriteClick}
                                 className={styles.favoriteButton}
                             >
-                                <AiFillStar />
-                            </button>
+                                <MdFavorite className={styles.emptyHeart} />
+                            </span>
                         )}
                     </div>
                 </>

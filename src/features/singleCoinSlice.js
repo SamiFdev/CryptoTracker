@@ -12,6 +12,7 @@ export const fetchSingleCoin = createAsyncThunk(
 
 const initialState = {
     data: [],
+    savedSearch: [],
     error: false,
     loading: false,
 };
@@ -19,7 +20,12 @@ const initialState = {
 export const singleCoinSlice = createSlice({
     name: "singleCoinSearch",
     initialState,
-    reducers: {},
+    reducers: {
+        savedSearch: (state, action) => {
+            const inputSearched = [...state.data, action.payload];
+            state.data.id = inputSearched;
+        },
+    },
     extraReducers: {
         [fetchSingleCoin.pending]: (state, action) => {
             state.loading = true;
@@ -34,5 +40,6 @@ export const singleCoinSlice = createSlice({
         },
     },
 });
+export const { savedSearch } = singleCoinSlice.actions;
 
 export default singleCoinSlice.reducer;

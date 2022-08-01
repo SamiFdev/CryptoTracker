@@ -10,6 +10,7 @@
     font-size: 1.2rem;
     text-align: start;
     height: 1.5rem;
+    border-radius: 8px;
 }
 
 .searchField {
@@ -23,16 +24,27 @@
 
 .submitButton {
     height: 2rem;
-    border-radius: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.submitButton:hover {
 }
 
-.filledStar {
-    fill: gold;
+.filledHeart {
+    color: red;
+}
+.emptyHeart {
 }
 .favoriteButton {
-    background-color: slategray;
+    background-color: transparent;
     border-radius: 5px;
     position: absolute;
+    right: 1.9rem;
+    top: 0.5rem;
+    cursor: pointer;
+}
+.favoriteButton:hover {
+    transform: scale(1.2);
 }
 
 .directions {
@@ -41,17 +53,26 @@
     align-items: center;
     color: whitesmoke;
 }
+.lastTwentyFour {
+    text-decoration: underline;
+}
+
+.priceTrends {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 .coinCardDisplay {
     display: flex;
     height: 50vh;
-    width: 15vw;
+    width: 30vw;
     flex-direction: column;
-    background-color: rgb(53, 146, 146);
+    background-color: gainsboro;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    gap: 1rem;
+    gap: 1.5rem;
     border: 2px black solid;
     border-radius: 10px;
 }
@@ -67,6 +88,7 @@
 
 .coinNameForCard {
     font-size: 3rem;
+    text-transform: capitalize;
     color: black;
     text-align: center;
 }
@@ -87,85 +109,9 @@
     .coinCardDisplay {
         display: flex;
         height: 50vh;
-        width: 22vw;
+        width: 30vw;
         flex-direction: column;
-        background-color: rgb(53, 146, 146);
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        gap: 1rem;
-        border: 2px black solid;
-        border-radius: 10px;
-    }
-    .searchBar {
-        display: flex;
-        font-size: 1.2rem;
-        text-align: start;
-        height: 1.5rem;
-    }
-
-    .searchField {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        padding-left: 1rem;
-    }
-
-    .submitButton {
-        height: 2rem;
-        border-radius: 5px;
-    }
-    @media (max-width: 1000px) {
-        .coinCardDisplay {
-            display: flex;
-            height: 50vh;
-            width: 25vw;
-            flex-direction: column;
-            background-color: rgb(53, 146, 146);
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            gap: 1rem;
-            border: 2px black solid;
-            border-radius: 10px;
-        }
-        .coinCard {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            margin: 6rem;
-            padding-left: 8rem;
-        }
-
-        .searchBar {
-            display: flex;
-            font-size: 1.2rem;
-            text-align: start;
-            height: 1.5rem;
-        }
-
-        .searchField {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            padding-left: 8rem;
-            margin: 1rem;
-        }
-
-        .submitButton {
-            height: 2rem;
-            border-radius: 5px;
-        }
-    }
-}
-@media (max-width: 800px) {
-    .coinCardDisplay {
-        display: flex;
-        height: 50vh;
-        width: 25vw;
-        flex-direction: column;
-        background-color: rgb(53, 146, 146);
+        background-color: gainsboro;
         justify-content: center;
         align-items: center;
         padding: 1rem;
@@ -179,7 +125,92 @@
         flex-direction: column;
         position: absolute;
         margin: 6rem;
-        padding-left: 13rem;
+        padding-left: 8rem;
+    }
+
+    .searchBar {
+        display: flex;
+        font-size: 1.2rem;
+        text-align: start;
+        height: 1.5rem;
+    }
+
+    .searchField {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding-left: 9rem;
+    }
+
+    .submitButton {
+        height: 2rem;
+        border-radius: 5px;
+    }
+    @media (max-width: 1000px) {
+        .coinCardDisplay {
+            display: flex;
+            height: 50vh;
+            width: 30vw;
+            flex-direction: column;
+            background-color: gainsboro;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            border: 2px black solid;
+            border-radius: 10px;
+        }
+        .coinCard {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            margin: 6rem;
+            padding-left: 18rem;
+        }
+
+        .searchBar {
+            display: flex;
+            font-size: 1.2rem;
+            text-align: start;
+            height: 1.5rem;
+        }
+
+        .searchField {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding-left: 18rem;
+            margin: 1rem;
+        }
+
+        .submitButton {
+            height: 2rem;
+            border-radius: 5px;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .coinCardDisplay {
+        display: flex;
+        height: 50vh;
+        width: 40vw;
+        flex-direction: column;
+        background-color: gainsboro;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        border: 2px black solid;
+        border-radius: 10px;
+    }
+    .coinCard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin: 6rem;
+        padding-left: 15.5rem;
     }
 
     .searchBar {
@@ -206,13 +237,13 @@
     .coinCardDisplay {
         display: flex;
         height: 50vh;
-        width: 35vw;
+        width: auto;
         flex-direction: column;
-        background-color: rgb(53, 146, 146);
+        background-color: gainsboro;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
-        gap: 1rem;
+        padding: 3rem;
+        gap: 2rem;
         border: 2px black solid;
         border-radius: 10px;
     }
@@ -222,7 +253,7 @@
         flex-direction: column;
         position: absolute;
         margin: 6rem;
-        padding-left: 10rem;
+        padding-left: 14rem;
     }
 
     .searchBar {
@@ -236,71 +267,469 @@
         display: flex;
         gap: 1rem;
         justify-content: center;
-        padding-left: 8rem;
+        padding-left: 12rem;
         margin: 1rem;
+    }
+    .directions {
+        visibility: hidden;
     }
 
     .submitButton {
         height: 2rem;
         border-radius: 5px;
     }
-}
-@media (max-width: 470px) {
-    .coinCardDisplay {
-        display: flex;
-        height: 50vh;
-        width: 40vw;
-        flex-direction: column;
-        background-color: rgb(53, 146, 146);
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        gap: 1rem;
-        border: 2px black solid;
-        border-radius: 10px;
-    }
-    .coinCard {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        margin: 6rem;
-        padding-left: 6rem;
-    }
+    @media (max-width: 600px) {
+        .coinCardDisplay {
+            display: flex;
+            height: 50vh;
+            width: 40vw;
+            flex-direction: column;
+            background-color: gainsboro;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            border: 2px black solid;
+            border-radius: 10px;
+        }
+        .coinCard {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            margin: 6rem;
+            padding-left: 14rem;
+        }
 
-    .searchBar {
-        display: flex;
-        font-size: 1.2rem;
-        text-align: start;
-        height: 1.5rem;
-    }
+        .searchBar {
+            display: flex;
+            font-size: 1.2rem;
+            text-align: start;
+            height: 1.5rem;
+        }
 
-    .searchField {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        padding-left: 8rem;
-        margin: 1rem;
-    }
+        .searchField {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: center;
+            padding-left: 15rem;
+            align-items: center;
+        }
+        .submitButton {
+            width: 4rem;
+        }
+        .favoriteButton {
+            background-color: transparent;
+            border-radius: 5px;
+            position: absolute;
+            right: 2rem;
+            top: 1rem;
+            cursor: pointer;
+        }
+        @media (max-width: 580px) {
+            .coinCardDisplay {
+                display: flex;
+                height: 50vh;
+                width: 40vw;
+                flex-direction: column;
+                background-color: gainsboro;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                gap: 1rem;
+                border: 2px black solid;
+                border-radius: 10px;
+            }
+            .coinCard {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                margin: 6rem;
+                padding-left: 14rem;
+            }
 
-    .submitButton {
-        height: 2rem;
-        border-radius: 5px;
-    }
-}
-@media (max-width: 600px) {
-    .directions {
-        font-size: 13px;
-    }
-}
-@media (max-width: 565px) {
-    .directions {
-        font-size: 13px;
-        font-weight: bold;
-    }
-}
-@media (max-width: 560px) {
-    .directions {
-        color: black;
+            .searchBar {
+                display: flex;
+                font-size: 1.2rem;
+                text-align: start;
+                height: 1.5rem;
+                width: 12rem;
+            }
+
+            .searchField {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                justify-content: center;
+                padding-left: 15rem;
+                overflow: hidden;
+                align-items: center;
+            }
+            .submitButton {
+                width: auto;
+            }
+            .favoriteButton {
+                background-color: transparent;
+                border-radius: 5px;
+                position: absolute;
+                right: 2.5rem;
+                top: 1rem;
+                cursor: pointer;
+            }
+            @media (max-width: 530px) {
+                .coinCardDisplay {
+                    display: flex;
+                    height: 50vh;
+                    width: 32vw;
+                    flex-direction: column;
+                    background-color: gainsboro;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1rem;
+                    gap: 3rem;
+                    border: 2px black solid;
+                    border-radius: 10px;
+                }
+                .coinCard {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    margin: 6rem;
+                    padding-left: 12rem;
+                }
+
+                .searchBar {
+                    display: flex;
+                    font-size: 1.2rem;
+                    text-align: start;
+                    height: 1.5rem;
+                }
+
+                .searchField {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+                    align-items: center;
+                    padding-left: 15rem;
+                    margin: 1rem;
+                    overflow: hidden;
+                }
+                .favoriteButton {
+                    background-color: transparent;
+                    border-radius: 5px;
+                    position: absolute;
+                    right: 2.3rem;
+                    top: 2.5rem;
+                    cursor: pointer;
+                }
+                @media (max-width: 500px) {
+                    .coinCardDisplay {
+                        display: flex;
+                        height: 50vh;
+                        width: auto;
+                        flex-direction: column;
+                        background-color: gainsboro;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 2rem;
+                        gap: 2rem;
+                        border: 2px black solid;
+                        border-radius: 10px;
+                    }
+                    .coinCard {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        margin: 0;
+                        padding-left: 15rem;
+                        padding: 5rem;
+                    }
+
+                    .searchBar {
+                        display: flex;
+                        font-size: 1.2rem;
+                        text-align: start;
+                        height: 1.5rem;
+                    }
+
+                    .searchField {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        justify-content: center;
+                        padding-left: 10rem;
+                    }
+
+                    .submitButton {
+                        height: 2rem;
+                        border-radius: 5px;
+                    }
+                    .favoriteButton {
+                        background-color: transparent;
+                        border-radius: 5px;
+                        position: absolute;
+                        right: 5.5rem;
+                        top: 2.5rem;
+                        cursor: pointer;
+                    }
+                }
+                @media (max-width: 475px) {
+                    .coinCardDisplay {
+                        display: flex;
+                        height: 50vh;
+                        width: auto;
+                        flex-direction: column;
+                        background-color: gainsboro;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 1rem;
+                        gap: 2rem;
+                        border: 2px black solid;
+                        border-radius: 10px;
+                        overflow: hidden;
+                    }
+                    .coinCard {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        margin: 0;
+                        padding-left: 12rem;
+                        overflow: hidden;
+                    }
+
+                    .coinNameForCard {
+                        font-size: 2rem;
+                    }
+
+                    .coinPriceForCard {
+                        font-size: 1.5rem;
+                    }
+                    .searchBar {
+                        display: flex;
+                        font-size: 1.2rem;
+                        text-align: start;
+                        height: 1.5rem;
+                    }
+
+                    .searchField {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        justify-content: center;
+                        padding-left: 15rem;
+                        overflow: hidden;
+                    }
+
+                    .submitButton {
+                        height: 2rem;
+                        border-radius: 5px;
+                    }
+                }
+                @media (max-width: 750px) {
+                    .directions {
+                        visibility: hidden;
+                    }
+                }
+                @media (max-width: 713px) {
+                    .directions {
+                        visibility: hidden;
+                    }
+                }
+                @media (max-width: 650px) {
+                    .directions {
+                        visibility: hidden;
+                    }
+                }
+                @media (max-width: 600px) {
+                    .directions {
+                        visibility: hidden;
+                    }
+                }
+                @media (max-width: 565px) {
+                    .directions {
+                        visibility: hidden;
+                    }
+                    .searchField {
+                        overflow: hidden;
+                    }
+                }
+                @media (max-width: 560px) {
+                    .directions {
+                        visibility: hidden;
+                    }
+                    .searchField {
+                        padding-left: 15rem;
+                        overflow: hidden;
+                    }
+                }
+                @media (max-width: 470px) {
+                    .searchField {
+                        padding-left: 15rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        overflow: hidden;
+                    }
+                    .submitButton {
+                        height: 2rem;
+                        width: 4rem;
+                        border-radius: 5px;
+                    }
+                }
+
+                @media (max-width: 1200px) {
+                    .searchField {
+                        display: flex;
+                        gap: 0.5rem;
+                        justify-content: center;
+                        padding-left: 17rem;
+                        margin: 1rem;
+                    }
+                }
+                @media (max-width: 530px) {
+                    .searchField {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        justify-content: center;
+                        padding-left: 12rem;
+
+                        align-items: center;
+                    }
+                    .submitButton {
+                        width: 4rem;
+                    }
+                    .coinCardDisplay {
+                        display: flex;
+                        height: 50vh;
+                        width: 10vw;
+                        flex-direction: column;
+                        background-color: gainsboro;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 1rem;
+                        gap: 1rem;
+                        border: 2px black solid;
+                        border-radius: 10px;
+                    }
+                    .coinCard {
+                        position: relative;
+                        display: flex;
+                        padding-top: 1.8rem;
+                        flex-direction: column;
+                        position: absolute;
+                        margin: 6rem;
+                    }
+                }
+                @media (max-width: 525px) {
+                    .searchField {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        justify-content: center;
+                        padding-left: auto;
+                        margin: auto;
+                        overflow: hidden;
+                        align-items: center;
+                    }
+                    .coinCardDisplay {
+                        display: flex;
+                        height: 50vh;
+                        width: 10vw;
+                        flex-direction: column;
+                        background-color: gainsboro;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 1rem;
+                        gap: 1rem;
+                        border: 2px black solid;
+                        border-radius: 10px;
+                    }
+                    .coinCard {
+                        position: relative;
+                        display: flex;
+                        padding-top: 1.8rem;
+                        flex-direction: column;
+                        position: absolute;
+                        margin: 6rem;
+                    }
+                }
+
+                @media (max-width: 1200px) {
+                    .coinCardDisplay {
+                        display: flex;
+                        height: 50vh;
+                        width: 30vw;
+                        flex-direction: column;
+                        background-color: gainsboro;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 1rem;
+                        gap: 1rem;
+                        border: 2px black solid;
+                        border-radius: 10px;
+                    }
+                    .coinCard {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        margin: 6rem;
+                        padding-left: 18rem;
+                    }
+                }
+                @media (max-width: 1500px) {
+                    .coinCardDisplay {
+                        display: flex;
+                        height: auto;
+                        width: auto;
+                        margin: -2rem;
+                        flex-direction: column;
+                        background-color: gainsboro;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        gap: 1.5rem;
+                        border: 2px black solid;
+                        border-radius: 10px;
+                    }
+                    .coinCard {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        padding-left: 11rem;
+                    }
+                    .searchField {
+                        overflow: hidden;
+                        gap: 0.5rem;
+                        padding-right: 7rem;
+                    }
+                    .coinNameForCard {
+                        font-size: 2rem;
+                    }
+                    .coinPicForCard {
+                        height: 6rem;
+                        width: 6rem;
+                    }
+                    .coinPriceForCard {
+                        font-size: 1.5rem;
+                    }
+                    .favoriteButton {
+                        background-color: transparent;
+                        border-radius: 5px;
+                        position: absolute;
+                        right: 3.5rem;
+                        top: 0.2rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 }

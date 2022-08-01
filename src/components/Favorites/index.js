@@ -6,8 +6,10 @@ import {
 } from "../../features/favoritesSlice";
 import styles from "./favorites.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { AiFillStar, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
+import { BsTrash } from "react-icons/bs";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
+import { savedSearch } from "../../features/singleCoinSlice";
 
 function Favorites() {
     const { data, fetched } = useSelector((state) => state.favorites);
@@ -34,26 +36,29 @@ function Favorites() {
         return (
             <section className={styles.sidePanel}>
                 <h2>Favorites</h2>
-                <span className={styles.helper}>
-                    Click the star to remove from favorites
-                </span>
                 <ul className={styles.favList}>
                     {data.map((coin, index) => (
                         <li className={styles.listedFavs} key={index}>
                             <span className={styles.coinName}>{coin} </span>
                             <div className={styles.favButtons}>
-                                <button
+                                <span
                                     className={styles.removeFavoriteButton}
                                     onClick={() => removeFavorite(coin)}
                                 >
-                                    <AiFillStar className={styles.favStar} />
-                                </button>
-                                <button
+                                    <BsTrash
+                                        className={styles.buttonTarget}
+                                        color="black"
+                                    />
+                                </span>
+                                <span
                                     className={styles.viewCoinButton}
                                     onClick={() => coinFetchFromFavs(coin)}
                                 >
-                                    <AiOutlineSearch />
-                                </button>
+                                    <AiOutlineSearch
+                                        className={styles.buttonTarget}
+                                        color="white"
+                                    />
+                                </span>
                             </div>
                         </li>
                     ))}
