@@ -18,12 +18,11 @@ function MainContent() {
     );
     const { data: favorites } = useSelector((state) => state.favorites);
 
-    const savedSearch = data.id;
+    // const savedSearch = data.id;
 
     const handleInputChange = (e) => {
         setSearchedCoin(e.target.value);
     };
-    console.log("test", savedSearch);
 
     const handleSubmit = () => {
         dispatch(fetchSingleCoin(searchedCoin));
@@ -50,7 +49,7 @@ function MainContent() {
                     required
                     value={searchedCoin}
                     onChange={handleInputChange}
-                    placeholder={savedSearch || "Search a coin!"}
+                    placeholder={data?.id || "Search a coin!"}
                 />
                 <button
                     disabled={!searchedCoin.length || loading}

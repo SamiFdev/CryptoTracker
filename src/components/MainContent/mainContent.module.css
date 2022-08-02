@@ -85,6 +85,11 @@
     margin: 6rem;
     padding-right: 1.5rem;
 }
+.coinCardDisplay:hover {
+    background: linear-gradient(to bottom, salmon 5%, lightblue 40%) top;
+    background-size: 200%;
+    transition: 1s ease-out;
+}
 
 .coinNameForCard {
     font-size: 3rem;
