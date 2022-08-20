@@ -2,14 +2,13 @@ import styles from "./mainContent.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
-import { importSavedFavorites } from "../../features/favoritesSlice";
-// import { updateFavorites } from "../../features/favoritesSlice";
 import { addNewFavorite } from "../../features/favoritesSlice";
 import { removeExistingFavorite } from "../../features/favoritesSlice";
 import Loader from "../Loader";
 import Error from "../ErrorAlert";
-import Favorites from "../Favorites";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import { MdFavorite } from "react-icons/md";
+// import { savedSearch } from "../../features/singleCoinSlice";
 
 function MainContent() {
     const [searchedCoin, setSearchedCoin] = useState([]);
@@ -19,73 +18,118 @@ function MainContent() {
     );
     const { data: favorites } = useSelector((state) => state.favorites);
 
+    // const savedSearch = data.id;
+
     const handleInputChange = (e) => {
         setSearchedCoin(e.target.value);
     };
 
     const handleSubmit = () => {
         dispatch(fetchSingleCoin(searchedCoin));
+        setSearchedCoin("");
     };
 
     const onFavoriteClick = () => {
         // dispatch addNewFavorite with argument of coin id saved in state in this component - powering the value of the input
-        dispatch(addNewFavorite(searchedCoin));
+        dispatch(addNewFavorite(data.id));
     };
 
     const onRemoveClick = () => {
-        dispatch(removeExistingFavorite(searchedCoin));
+        dispatch(removeExistingFavorite(data.id));
     };
 
-    // TODO
-    // add styling the favorites button if the searched coin already exists in local storage/redux favorites
-
     return (
-        <section className={styles.mainContainer}>
+        <div className={styles.mainContainer}>
             {loading ? <Loader /> : null}
             {error ? <Error /> : null}
-            <input
-                className={styles.searchBar}
-                type="text"
-                required
-                value={searchedCoin}
-                onChange={handleInputChange}
-                placeholder="Search a coin"
-            />
-            <button
-                disabled={!searchedCoin.length || loading}
-                onClick={handleSubmit}
-                className={styles.submitButton}
-            >
-                Submit
-            </button>
-            <div className={styles.singleCoinDiv}>
-                {/* Use redux favorites slice to indicate if there was no data
-                returned after fetch */}
-                {!data?.id ? (
-                    <div>Search for a valid coin</div>
-                ) : (
-                    <>
-                        {data.id}
-                        {data.current_price}
+            <div className={styles.searchField}>
+                <input
+                    className={styles.searchBar}
+                    type="text"
+                    required
+                    value={searchedCoin}
+                    onChange={handleInputChange}
+                    placeholder={data?.id || "Search a coin!"}
+                />
+                <button
+                    disabled={!searchedCoin.length || loading}
+                    onClick={handleSubmit}
+                    className={styles.submitButton}
+                >
+                    Search
+                </button>
+            </div>
+            <div className={styles.singleCoinDiv}></div>
+            {!data?.id ? (
+                <div className={styles.directions}>
+                    {" "}
+                    Search for a valid coin!
+                </div>
+            ) : (
+                <>
+                    <div className={styles.coinCard}>
+                        <div className={styles.coinCardDisplay}>
+                            <div className={styles.coinIdentity}>
+                                <img
+                                    className={styles.coinPicForCard}
+                                    src={data.image}
+                                    alt="coin"
+                                ></img>
+                                <span className={styles.coinNameForCard}>
+                                    {data.id}
+                                </span>
+                            </div>
+                            <span className={styles.coinSymbol}>
+                                ({data.symbol})
+                            </span>
+
+                            <span className={styles.coinPriceForCard}>
+                                Current Price: $ {data.current_price}
+                            </span>
+                            <div className={styles.marketInfoContainer}>
+                                <span className={styles.marketVolume}>
+                                    Total Volume: {data.total_volume}
+                                </span>
+                                <span className={styles.marketCapInfo}>
+                                    Market Cap Rank: {data.market_cap_rank}
+                                </span>
+                            </div>
+                            <span className={styles.lastTwentyFour}>
+                                Last 24 hours
+                            </span>
+                            <div className={styles.priceTrends}>
+                                <span className={styles.highTwentyFour}>
+                                    <AiOutlineArrowUp color="green" /> $
+                                    {data.high_24h}
+                                </span>
+                                <span className={styles.lowTwentyFour}>
+                                    <AiOutlineArrowDown color="red" /> $
+                                    {data.low_24h}
+                                </span>
+                                <span className={styles.twentyFourChange}>
+                                    {data.price_change_percentage_24h} %
+                                </span>
+                            </div>
+                        </div>
                         {favorites.includes(data.id) ? (
-                            <button onClick={onRemoveClick}>
-                                <AiOutlineStar className={styles.filledStar} />
-                            </button>
+                            <span
+                                onClick={onRemoveClick}
+                                className={styles.favoriteButton}
+                            >
+                                <MdFavorite className={styles.filledHeart} />
+                            </span>
                         ) : (
-                            <button
+                            <span
                                 onClick={onFavoriteClick}
                                 className={styles.favoriteButton}
                             >
-                                <AiOutlineStar />
-                            </button>
+                                <MdFavorite className={styles.emptyHeart} />
+                            </span>
                         )}
-                        {/* check if data.id exists in favorites */}
-                        {/* if exists -> display remove from favorites */}
-                        {/* if doesnt exist -> display add to favorites */}
-                    </>
-                )}
-            </div>
-        </section>
+                    </div>
+                </>
+            )}
+        </div>
     );
 }
 

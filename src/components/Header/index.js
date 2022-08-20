@@ -18,19 +18,23 @@ function Header() {
     }, [dispatch, wasDataFetched]);
 
     return (
-        <header>
+        <header className={styles.header}>
             <h1 className={styles.siteTitle}>Crypto Tracker</h1>
-            {loading ? <Loader /> : null}
-            {error ? <Error /> : null}
-            {/* {data.map((coins, index) => (
-                <div className={styles.coinsContainer} key={index}>
-                    <div className={styles.scrollingInfo}>
-                        {coins.id}
-                        <img src={coins.image} alt="coin"></img>$
-                        {coins.current_price}
+            <div className={styles.ticker}>
+                {data.map((coins, index) => (
+                    <div className={styles.coinsContainer} key={index}>
+                        <div className={styles.scrollingInfo}>
+                            <span className={styles.coinName}>{coins.id}</span>
+                            <img src={coins.image} alt="coin"></img>
+                            <span className={styles.coinPricing}>
+                                $ {coins.current_price}
+                            </span>
+                        </div>
                     </div>
-                </div>
-            ))} */}
+                ))}
+                {loading ? <Loader /> : null}
+                {error ? <Error /> : null}
+            </div>
         </header>
     );
 }

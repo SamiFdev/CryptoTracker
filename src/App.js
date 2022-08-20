@@ -5,6 +5,7 @@ import { store } from "./app/store";
 import { Provider } from "react-redux";
 import "./App.css";
 import Favorites from "./components/Favorites";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Header />
                 <MainContent />
                 <Favorites />
+                <Footer />
             </main>
         </Provider>
     );

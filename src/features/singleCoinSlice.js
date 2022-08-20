@@ -34,5 +34,6 @@ export const singleCoinSlice = createSlice({
         },
     },
 });
+export const { savedSearch } = singleCoinSlice.actions;
 
 export default singleCoinSlice.reducer;

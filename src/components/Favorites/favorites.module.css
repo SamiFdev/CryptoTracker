@@ -1,28 +1,1060 @@
 .sidePanel {
-    height: 30vh;
+    height: auto;
     width: 15vw;
-    position: relative;
     left: 0;
     top: 0;
-    padding-top: 1rem;
-    background-color: var(--primary-accent);
-    display: grid;
-    text-align: center;
-    margin: 0.5rem;
-    grid-template-rows: auto;
+    padding-top: 0.5rem;
+    margin: 1rem;
+    background-color: #e94f37;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
 }
 
+.sidePanel .favList {
+    display: inline-flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0.2rem;
+    margin: 1rem rem;
+    justify-content: center;
+}
+
+.listedFavs .coinName {
+    display: inline-flex;
+    color: black;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+}
+
+.sidePanel .listedFavs {
+    display: grid;
+    grid-template-columns: 1fr 6rem;
+    align-items: center;
+}
+
+.sidePanel .listedFavs .favButtons {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.removeFavoriteButton {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.viewCoinButton {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    border-radius: 8px;
+    height: auto;
+    width: auto;
+}
+.buttonTarget {
+    cursor: pointer;
+}
+.buttonTarget:hover {
+    transform: scale(1.5);
+}
 .sidePanel h2 {
     font-size: 1.5rem;
     color: var(--primary-textColor);
 }
+
+.helper {
+    text-align: center;
+    padding: 0.5rem;
+    color: aliceblue;
+}
 .sidePanel div {
     padding: 8px;
     font-size: 1rem;
-    display: block;
+    display: flex;
     color: var(--primary-textColor);
+}
+
+.sidePanel span {
+    color: wheat;
+    padding: 1rem;
 }
 
 .favStar {
     fill: gold;
+}
+
+.clearFavsButton {
+    position: relative;
+    display: flex;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #99c24d;
+}
+.clearFavsButton:hover {
+    transform: scale(1.5);
+}
+
+@media (max-width: 1200px) {
+    .sidePanel {
+        height: auto;
+        width: 20vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 950px) {
+    .sidePanel {
+        height: auto;
+        width: 22vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 850px) {
+    .sidePanel {
+        height: auto;
+        width: 25vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 750px) {
+    .sidePanel {
+        height: auto;
+        width: 27vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 660px) {
+    .sidePanel {
+        height: auto;
+        width: 30vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 600px) {
+    .sidePanel {
+        height: auto;
+        width: 32vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 575px) {
+    .sidePanel {
+        height: auto;
+        width: 34vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 530px) {
+    .sidePanel {
+        height: auto;
+        width: 35vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 500px) {
+    .sidePanel {
+        height: auto;
+        width: 35vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        font-size: 12px;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 470px) {
+    .sidePanel {
+        height: auto;
+        width: 36vw;
+        position: relative;
+        left: 0;
+        top: 0;
+        padding: 0.5rem;
+        background-color: rgb(53, 146, 146);
+        display: inline-flex;
+        flex-direction: column;
+        margin: 0.5rem;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: center;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+    }
 }
