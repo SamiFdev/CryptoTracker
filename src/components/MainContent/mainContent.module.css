@@ -19,23 +19,17 @@
     justify-content: center;
 }
 
-.singleCoinDiv {
-}
-
 .submitButton {
     height: 2rem;
     border-radius: 8px;
     cursor: pointer;
-}
-.submitButton:hover {
 }
 
 .filledHeart {
     color: red;
     font-size: 1.5rem;
 }
-.emptyHeart {
-}
+
 .favoriteButton {
     background-color: transparent;
     border-radius: 5px;
@@ -1530,9 +1524,6 @@
         @media (max-width: 560px) {
             .directions {
                 visibility: hidden;
-            }
-
-            .searchField {
             }
         }
         @media (max-width: 470px) {
