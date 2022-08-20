@@ -10,7 +10,6 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { MdClear } from "react-icons/md";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
-import { savedSearch } from "../../features/singleCoinSlice";
 
 function Favorites() {
     const { data, fetched } = useSelector((state) => state.favorites);
