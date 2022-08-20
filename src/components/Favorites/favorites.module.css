@@ -1,20 +1,15 @@
 .sidePanel {
     height: auto;
-    width: auto;
-    position: relative;
+    width: 15vw;
     left: 0;
     top: 0;
     padding-top: 0.5rem;
-    background-color: rgb(53, 146, 146);
-    display: inline-flex;
+    margin: 1rem;
+    background-color: #e94f37;
+    display: flex;
     flex-direction: column;
-    text-align: justify;
-    margin: 0.5rem;
-    padding: 1rem;
     align-items: center;
-    justify-content: space-between;
-    border-radius: 20px;
-    /* grid-template-rows: auto; */
+    border-radius: 8px;
 }
 
 .sidePanel .favList {
@@ -99,30 +94,27 @@
     position: relative;
     display: flex;
     margin-bottom: 0.5rem;
-    border-radius: 12px;
     cursor: pointer;
-    box-shadow: 2px 2px;
+    font-size: 2rem;
+    color: #99c24d;
 }
 .clearFavsButton:hover {
-    background-color: red;
+    transform: scale(1.5);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
     .sidePanel {
         height: auto;
-        width: 30vw;
-        position: relative;
+        width: 20vw;
         left: 0;
         top: 0;
         padding-top: 0.5rem;
-        background-color: rgb(53, 146, 146);
-        display: inline-flex;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
         flex-direction: column;
-        text-align: justify;
-        margin: 0.5rem;
         align-items: center;
-        justify-content: space-between;
-        border-radius: 20px;
+        border-radius: 8px;
         /* grid-template-rows: auto; */
     }
 
@@ -205,22 +197,20 @@
         cursor: pointer;
     }
 }
-@media (max-width: 800px) {
+
+@media (max-width: 950px) {
     .sidePanel {
         height: auto;
-        width: 28vw;
-        position: relative;
+        width: 22vw;
         left: 0;
         top: 0;
         padding-top: 0.5rem;
-        background-color: rgb(53, 146, 146);
-        display: inline-flex;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
         flex-direction: column;
-        text-align: justify;
-        margin: 0.5rem;
         align-items: center;
-        justify-content: space-between;
-        border-radius: 20px;
+        border-radius: 8px;
         /* grid-template-rows: auto; */
     }
 
@@ -240,7 +230,7 @@
     }
 
     .sidePanel .listedFavs {
-        text-align: center;
+        text-align: justify;
         margin: 0.2rem;
         align-items: center;
         justify-content: flex-start;
@@ -300,24 +290,213 @@
         display: flex;
         margin-bottom: 0.5rem;
         border-radius: 4px;
+        cursor: pointer;
     }
 }
+@media (max-width: 850px) {
+    .sidePanel {
+        height: auto;
+        width: 25vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 750px) {
+    .sidePanel {
+        height: auto;
+        width: 27vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
 @media (max-width: 660px) {
     .sidePanel {
         height: auto;
-        width: 31vw;
-        position: relative;
+        width: 30vw;
         left: 0;
         top: 0;
         padding-top: 0.5rem;
-        background-color: rgb(53, 146, 146);
-        display: inline-flex;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
         flex-direction: column;
-        text-align: justify;
-        margin: 0.5rem;
         align-items: center;
-        justify-content: space-between;
-        border-radius: 20px;
+        border-radius: 8px;
         /* grid-template-rows: auto; */
     }
 
@@ -337,7 +516,7 @@
     }
 
     .sidePanel .listedFavs {
-        text-align: center;
+        text-align: justify;
         margin: 0.2rem;
         align-items: center;
         justify-content: flex-start;
@@ -397,24 +576,118 @@
         display: flex;
         margin-bottom: 0.5rem;
         border-radius: 4px;
+        cursor: pointer;
     }
 }
+@media (max-width: 600px) {
+    .sidePanel {
+        height: auto;
+        width: 32vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
 @media (max-width: 575px) {
     .sidePanel {
         height: auto;
-        width: 35vw;
-        position: relative;
+        width: 34vw;
         left: 0;
         top: 0;
         padding-top: 0.5rem;
-        background-color: rgb(53, 146, 146);
-        display: inline-flex;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
         flex-direction: column;
-        text-align: justify;
-        margin: 0.5rem;
         align-items: center;
-        justify-content: space-between;
-        border-radius: 20px;
+        border-radius: 8px;
         /* grid-template-rows: auto; */
     }
 
@@ -434,7 +707,7 @@
     }
 
     .sidePanel .listedFavs {
-        text-align: center;
+        text-align: justify;
         margin: 0.2rem;
         align-items: center;
         justify-content: flex-start;
@@ -494,25 +767,117 @@
         display: flex;
         margin-bottom: 0.5rem;
         border-radius: 4px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 530px) {
+    .sidePanel {
+        height: auto;
+        width: 35vw;
+        left: 0;
+        top: 0;
+        padding-top: 0.5rem;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        /* grid-template-rows: auto; */
+    }
+
+    .sidePanel .favList {
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.5rem;
+        margin: 1rem 2rem;
+        text-align: justify;
+        justify-content: center;
+    }
+
+    .listedFavs .coinName {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    .sidePanel .listedFavs {
+        text-align: justify;
+        margin: 0.2rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sidePanel .listedFavs .favButtons {
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .removeFavoriteButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    .viewCoinButton {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .sidePanel h2 {
+        font-size: 1.5rem;
+        color: var(--primary-textColor);
+    }
+
+    .helper {
+        text-align: center;
+        padding: 0.5rem;
+        color: aliceblue;
+    }
+    .sidePanel div {
+        padding: 8px;
+        font-size: 1rem;
+        display: flex;
+        color: var(--primary-textColor);
+    }
+
+    .sidePanel span {
+        color: wheat;
+        padding: 1rem;
+    }
+
+    .favStar {
+        fill: gold;
+    }
+
+    .clearFavsButton {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
     }
 }
 
 @media (max-width: 500px) {
     .sidePanel {
         height: auto;
-        width: 33%;
-        position: relative;
+        width: 35vw;
         left: 0;
         top: 0;
-
         padding-top: 0.5rem;
-        background-color: rgb(53, 146, 146);
-        display: inline-flex;
+        margin: 1rem;
+        background-color: #e94f37;
+        display: flex;
         flex-direction: column;
-        text-align: justify;
-        margin: 0.5rem;
         align-items: center;
-        justify-content: space-between;
         border-radius: 8px;
         /* grid-template-rows: auto; */
     }
@@ -521,6 +886,7 @@
         display: inline-flex;
         flex-direction: column;
         list-style: none;
+        font-size: 12px;
         padding: 0.5rem;
         margin: 1rem 2rem;
         text-align: justify;
@@ -533,7 +899,7 @@
     }
 
     .sidePanel .listedFavs {
-        text-align: center;
+        text-align: justify;
         margin: 0.2rem;
         align-items: center;
         justify-content: flex-start;
@@ -593,6 +959,7 @@
         display: flex;
         margin-bottom: 0.5rem;
         border-radius: 4px;
+        cursor: pointer;
     }
 }
 @media (max-width: 470px) {

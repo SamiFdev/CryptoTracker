@@ -8,6 +8,7 @@ import styles from "./favorites.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
+import { MdClear } from "react-icons/md";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
 import { savedSearch } from "../../features/singleCoinSlice";
 
@@ -42,15 +43,6 @@ function Favorites() {
                             <span className={styles.coinName}>{coin} </span>
                             <div className={styles.favButtons}>
                                 <span
-                                    className={styles.removeFavoriteButton}
-                                    onClick={() => removeFavorite(coin)}
-                                >
-                                    <BsTrash
-                                        className={styles.buttonTarget}
-                                        color="black"
-                                    />
-                                </span>
-                                <span
                                     className={styles.viewCoinButton}
                                     onClick={() => coinFetchFromFavs(coin)}
                                 >
@@ -59,16 +51,25 @@ function Favorites() {
                                         color="white"
                                     />
                                 </span>
+                                <span
+                                    className={styles.removeFavoriteButton}
+                                    onClick={() => removeFavorite(coin)}
+                                >
+                                    <MdClear
+                                        className={styles.buttonTarget}
+                                        color="black"
+                                    />
+                                </span>
                             </div>
                         </li>
                     ))}
                 </ul>
-                <button
-                    className={styles.clearFavsButton}
+                <span
                     onClick={clearFavorites}
+                    className={styles.clearFavsButton}
                 >
-                    clear
-                </button>
+                    <BsTrash color="#BBBDF6" />
+                </span>
             </section>
         );
     } else {

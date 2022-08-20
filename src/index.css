@@ -1,7 +1,7 @@
 :root {
     --primary-accent: slategray;
     --primary-textColor: whitesmoke;
-    background-color: black;
+    background-color: #393e41;
 }
 
 body {
@@ -16,4 +16,9 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 6.5rem 4rem;
 }

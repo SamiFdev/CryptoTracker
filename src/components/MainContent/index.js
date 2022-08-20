@@ -69,17 +69,31 @@ function MainContent() {
                 <>
                     <div className={styles.coinCard}>
                         <div className={styles.coinCardDisplay}>
-                            <span className={styles.coinNameForCard}>
-                                {data.id}
+                            <div className={styles.coinIdentity}>
+                                <img
+                                    className={styles.coinPicForCard}
+                                    src={data.image}
+                                    alt="coin"
+                                ></img>
+                                <span className={styles.coinNameForCard}>
+                                    {data.id}
+                                </span>
+                            </div>
+                            <span className={styles.coinSymbol}>
+                                ({data.symbol})
                             </span>
-                            <img
-                                className={styles.coinPicForCard}
-                                src={data.image}
-                                alt="coin"
-                            ></img>
+
                             <span className={styles.coinPriceForCard}>
-                                $ {data.current_price}
+                                Current Price: $ {data.current_price}
                             </span>
+                            <div className={styles.marketInfoContainer}>
+                                <span className={styles.marketVolume}>
+                                    Total Volume: {data.total_volume}
+                                </span>
+                                <span className={styles.marketCapInfo}>
+                                    Market Cap Rank: {data.market_cap_rank}
+                                </span>
+                            </div>
                             <span className={styles.lastTwentyFour}>
                                 Last 24 hours
                             </span>
@@ -91,6 +105,9 @@ function MainContent() {
                                 <span className={styles.lowTwentyFour}>
                                     <AiOutlineArrowDown color="red" /> $
                                     {data.low_24h}
+                                </span>
+                                <span className={styles.twentyFourChange}>
+                                    {data.price_change_percentage_24h} %
                                 </span>
                             </div>
                         </div>

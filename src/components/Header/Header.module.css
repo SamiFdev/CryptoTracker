@@ -48,6 +48,7 @@ img {
 
 .scrollingInfo {
     color: white;
+    text-transform: capitalize;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +64,7 @@ img {
 
     -moz-animation: my-animation 15s linear infinite;
     -webkit-animation: my-animation 15s linear infinite;
-    animation: my-animation 40s linear infinite;
+    animation: my-animation 80s linear infinite;
 }
 
 /* for Firefox */
