@@ -21,4 +21,6 @@ code {
 main {
     display: grid;
     grid-template-rows: 6.5rem 4rem;
+    height: auto;
+    width: 100vw;
 }
