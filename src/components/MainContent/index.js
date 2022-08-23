@@ -51,7 +51,11 @@ function MainContent() {
                     onChange={handleInputChange}
                     placeholder={data?.id || "Search a coin!"}
                 />
-                <button onClick={handleSubmit} className={styles.submitButton}>
+                <button
+                    disabled={!searchedCoin.length || loading}
+                    onClick={handleSubmit}
+                    className={styles.submitButton}
+                >
                     Search
                 </button>
             </div>
