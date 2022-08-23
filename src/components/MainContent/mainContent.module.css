@@ -2110,9 +2110,10 @@
             justify-content: center;
             gap: 1rem;
             font-size: 0.8rem;
+            flex-direction: column;
         }
         .twentyFourChange {
-            font-size: 15px;
+            font-size: 12px;
             padding-left: 1rem;
         }
 
@@ -2133,7 +2134,7 @@
             align-items: center;
             border: 2px black solid;
             border-radius: 8px;
-            margin-left: -4rem;
+            margin-left: -2.5rem;
         }
 
         .coinIdentity {
@@ -2147,7 +2148,7 @@
             flex-direction: column;
             position: absolute;
             width: 50%;
-            margin-left: 18.5rem;
+            margin-left: 16.5rem;
         }
 
         .coinNameForCard {
@@ -2159,8 +2160,8 @@
 
         .coinPicForCard {
             color: black;
-            height: 2.5rem;
-            width: 2.5rem;
+            height: 1.5rem;
+            width: 1.5rem;
             text-align: center;
         }
 
