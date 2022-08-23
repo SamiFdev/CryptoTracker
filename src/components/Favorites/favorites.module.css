@@ -1060,19 +1060,20 @@
     @media (max-width: 428px) {
         .sidePanel {
             height: auto;
-            width: 36vw;
+
             position: relative;
             left: 0;
             top: 0;
+            width: 38vw;
             background-color: #e94f37;
-            display: inline-flex;
+            display: flex;
             flex-direction: column;
             margin: 0.5rem;
             align-items: center;
             justify-content: space-between;
             border-radius: 8px;
             text-align: center;
-            margin: 1rem;
+            margin: 0.5rem;
             /* grid-template-rows: auto; */
         }
 
@@ -1081,7 +1082,7 @@
             flex-direction: column;
             list-style: none;
             padding: 0.5rem;
-            margin: 1rem 2rem;
+            margin: 0.5rem 2rem;
             text-align: justify;
             justify-content: center;
         }
@@ -1102,7 +1103,7 @@
             display: inline-flex;
             align-items: center;
             text-align: center;
-            gap: 0.5rem;
+            gap: 0.1rem;
             justify-content: space-evenly;
         }
 
