@@ -1,5 +1,6 @@
-import styles from "./mainContent.module.css";
 import { useState } from "react";
+import { MdFavorite } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
 import { addNewFavorite } from "../../features/favoritesSlice";
@@ -7,8 +8,7 @@ import { removeExistingFavorite } from "../../features/favoritesSlice";
 import Loader from "../Loader";
 import Error from "../ErrorAlert";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
-import { MdFavorite } from "react-icons/md";
-// import { savedSearch } from "../../features/singleCoinSlice";
+import styles from "./mainContent.module.css";
 
 function MainContent() {
     const [searchedCoin, setSearchedCoin] = useState([]);
@@ -56,32 +56,37 @@ function MainContent() {
                     onClick={handleSubmit}
                     className={styles.submitButton}
                 >
-                    Search
+                    <FaSearch />
                 </button>
             </div>
             <div className={styles.singleCoinDiv}></div>
-            {!data?.id ? (
-                <div className={styles.directions}>
-                    {" "}
-                    Search for a valid coin!
-                </div>
-            ) : (
+            {data?.id ? (
                 <>
                     <div className={styles.coinCard}>
                         <div className={styles.coinCardDisplay}>
+                            <div className={styles.favoriteButton}>
+                                {favorites.includes(data.id) ? (
+                                    <MdFavorite
+                                        onClick={onRemoveClick}
+                                        className={styles.filledHeart}
+                                    />
+                                ) : (
+                                    <MdFavorite
+                                        onClick={onFavoriteClick}
+                                        className={styles.emptyHeart}
+                                    />
+                                )}
+                            </div>
                             <div className={styles.coinIdentity}>
                                 <img
                                     className={styles.coinPicForCard}
                                     src={data.image}
                                     alt="coin"
-                                ></img>
+                                />
                                 <span className={styles.coinNameForCard}>
-                                    {data.id}
+                                    {data.id}({data.symbol})
                                 </span>
                             </div>
-                            <span className={styles.coinSymbol}>
-                                ({data.symbol})
-                            </span>
 
                             <span className={styles.coinPriceForCard}>
                                 Current Price: $ {data.current_price}
@@ -111,24 +116,9 @@ function MainContent() {
                                 </span>
                             </div>
                         </div>
-                        {favorites.includes(data.id) ? (
-                            <span
-                                onClick={onRemoveClick}
-                                className={styles.favoriteButton}
-                            >
-                                <MdFavorite className={styles.filledHeart} />
-                            </span>
-                        ) : (
-                            <span
-                                onClick={onFavoriteClick}
-                                className={styles.favoriteButton}
-                            >
-                                <MdFavorite className={styles.emptyHeart} />
-                            </span>
-                        )}
                     </div>
                 </>
-            )}
+            ) : null}
         </div>
     );
 }

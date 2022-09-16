@@ -6,7 +6,6 @@ import {
 } from "../../features/favoritesSlice";
 import styles from "./favorites.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineSearch } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { MdClear } from "react-icons/md";
 import { fetchSingleCoin } from "../../features/singleCoinSlice";
@@ -39,27 +38,17 @@ function Favorites() {
                 <ul className={styles.favList}>
                     {data.map((coin, index) => (
                         <li className={styles.listedFavs} key={index}>
-                            <span className={styles.coinName}>{coin} </span>
-                            <div className={styles.favButtons}>
-                                <span
-                                    className={styles.viewCoinButton}
-                                    onClick={() => coinFetchFromFavs(coin)}
-                                >
-                                    <AiOutlineSearch
-                                        className={styles.buttonTarget}
-                                        color="white"
-                                    />
-                                </span>
-                                <span
-                                    className={styles.removeFavoriteButton}
-                                    onClick={() => removeFavorite(coin)}
-                                >
-                                    <MdClear
-                                        className={styles.buttonTarget}
-                                        color="black"
-                                    />
-                                </span>
-                            </div>
+                            <span
+                                className={styles.coinName}
+                                onClick={() => coinFetchFromFavs(coin)}
+                            >
+                                {coin}
+                            </span>
+                            <MdClear
+                                onClick={() => removeFavorite(coin)}
+                                className={styles.buttonTarget}
+                                color="black"
+                            />
                         </li>
                     ))}
                 </ul>

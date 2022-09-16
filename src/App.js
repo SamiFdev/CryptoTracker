@@ -3,19 +3,19 @@ import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
-import "./App.css";
 import Favorites from "./components/Favorites";
 import Footer from "./components/Footer";
+import styles from "./App.module.css";
 
 function App() {
     return (
         <Provider store={store}>
-            <main>
-                <Header />
-                <MainContent />
+            <Header />
+            <main className={styles.mainContentWrapper}>
                 <Favorites />
-                <Footer />
+                <MainContent />
             </main>
+            <Footer />
         </Provider>
     );
 }

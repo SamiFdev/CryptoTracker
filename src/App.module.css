@@ -1,0 +1,14 @@
+.mainContentWrapper {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    padding: 0 1rem;
+    grid-gap: 1rem;
+}
+
+@media screen and (max-width: 750px) {
+    .mainContentWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh 1fr;
+        overflow: auto;
+    }
+}
