@@ -1,6 +1,6 @@
 # Crypto Tracker
 
-[Deployed App](https://cozy-tapioca-808c0f.netlify.app)
+[Deployed App](https://cryptotrackersf.netlify.app/)
 
 ## Description
 
