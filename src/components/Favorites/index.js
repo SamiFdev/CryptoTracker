@@ -45,6 +45,7 @@ function Favorites() {
                                 {coin}
                             </span>
                             <MdClear
+                                title="remove"
                                 onClick={() => removeFavorite(coin)}
                                 className={styles.buttonTarget}
                                 color="black"
@@ -53,6 +54,7 @@ function Favorites() {
                     ))}
                 </ul>
                 <span
+                    title="Remove all favorites"
                     onClick={clearFavorites}
                     className={styles.clearFavsButton}
                 >

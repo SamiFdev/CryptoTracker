@@ -52,6 +52,7 @@ function MainContent() {
                     placeholder={data?.id || "Search a coin!"}
                 />
                 <button
+                    title="Search"
                     disabled={!searchedCoin.length || loading}
                     onClick={handleSubmit}
                     className={styles.submitButton}
@@ -64,7 +65,10 @@ function MainContent() {
                 <>
                     <div className={styles.coinCard}>
                         <div className={styles.coinCardDisplay}>
-                            <div className={styles.favoriteButton}>
+                            <div
+                                title="Favorite"
+                                className={styles.favoriteButton}
+                            >
                                 {favorites.includes(data.id) ? (
                                     <MdFavorite
                                         onClick={onRemoveClick}
